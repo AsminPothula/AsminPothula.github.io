@@ -12,15 +12,88 @@
         body {
             background-color: black;
             color: white;
+            scroll-behavior: smooth;
         }
         .navbar {
             background-color: black;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
         .navbar-brand {
             color: white;
         }
         .nav-link {
             color: white;
+        }
+        .navbar-nav {
+            margin-left: auto;
+        }
+        .active {
+            color: purple !important;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        section {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .about-section {
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            text-align: center;
+        }
+        .about-title {
+            flex: 0 1 auto;
+        }
+        .about-content {
+            display: flex;
+            flex: 1;
+        }
+        .about-text, .about-image {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+        .about-text {
+            flex-direction: column;
+        }
+        .about-image img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        .placeholder {
+            width: 80%;
+            height: 100px;
+            background-color: grey;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: black;
+            font-size: 1.2em;
+        }
+        .education-container {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+            padding: 20px;
+        }
+        .education-box {
+            background-color: grey;
+            color: black;
+            padding: 20px;
+            border-radius: 8px;
+            width: 45%;
+            text-align: center;
         }
     </style>
 </head>
@@ -37,16 +110,10 @@
                         <a class="nav-link" href="#home">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#experiences">Experiences</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#volunteering">Volunteering</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#skills">Skills</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#experiences">Experiences</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#education">Education</a>
@@ -60,41 +127,74 @@
     </nav>
 
     <section id="home">
-        <!-- Home section content -->
+        <h1>Welcome to My Portfolio</h1>
+        <p>Placeholder text for the home section.</p>
+    </section>
+
+    <section id="about" class="about-section">
+        <div class="about-title">
+            <h2>About Me</h2>
+        </div>
+        <div class="about-content">
+            <div class="about-text">
+                <p>Hello, I'm John Doe, a passionate web developer with a focus on front-end technologies. I have several years of experience creating modern and responsive websites using HTML, CSS, and JavaScript.</p>
+                <p>I have a strong understanding of web design principles and enjoy bringing creative ideas to life through code. With a keen eye for detail and a passion for user experience, I strive to create intuitive and visually appealing websites.</p>
+                <p>In addition to web development, I also have experience with graphic design tools such as Photoshop and Illustrator, which allows me to create engaging visuals and designs.</p>
+                <p>Feel free to explore my portfolio and get in touch with me for any project or collaboration opportunities. I'm always excited to work on new and challenging projects.</p>
+            </div>
+            <div class="about-image">
+                <img src="path/to/your/image.jpg" alt="About Me Image"> <!-- Replace with your image path -->
+            </div>
+        </div>
+        <p>Placeholder text for the about section.</p>
     </section>
 
     <section id="experiences">
-        <!-- Experiences section content -->
-    </section>
-
-    <section id="volunteering">
-        <!-- Volunteering section content -->
-    </section>
-
-    <section id="skills">
-        <!-- Skills section content -->
-    </section>
-
-    <section id="about">
-        <!-- About section content -->
-        <div class="container">
-            <h2>About Me</h2>
-            <p>Hello, I'm John Doe, a passionate web developer with a focus on front-end technologies. I have several years of experience creating modern and responsive websites using HTML, CSS, and JavaScript.</p>
-            <p>I have a strong understanding of web design principles and enjoy bringing creative ideas to life through code. With a keen eye for detail and a passion for user experience, I strive to create intuitive and visually appealing websites.</p>
-            <p>In addition to web development, I also have experience with graphic design tools such as Photoshop and Illustrator, which allows me to create engaging visuals and designs.</p>
-            <p>Feel free to explore my portfolio and get in touch with me for any project or collaboration opportunities. I'm always excited to work on new and challenging projects.</p>
-        </div>
+        <h2>Experiences</h2>
+        <p>Placeholder text for the experiences section.</p>
     </section>
 
     <section id="education">
-        <!-- Education section content -->
+        <h2>Education</h2>
+        <div class="education-container">
+            <div class="education-box">
+                <h3>Degree 1</h3>
+                <p>Details about Degree 1</p>
+            </div>
+            <div class="education-box">
+                <h3>Degree 2</h3>
+                <p>Details about Degree 2</p>
+            </div>
+        </div>
     </section>
 
     <section id="contact">
-        <!-- Contact section content -->
+        <h2>Contact Me</h2>
+        <p>Placeholder text for the contact section.</p>
     </section>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            window.addEventListener('scroll', function () {
+                let current = '';
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (pageYOffset >= sectionTop - 60) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active');
+                    if (link.getAttribute('href').includes(current)) {
+                        link.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
-
-
-
