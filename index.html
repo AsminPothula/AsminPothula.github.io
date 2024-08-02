@@ -27,7 +27,7 @@
         .navbar-brand {
             color: white;
             font-size: 1.5rem;
-            font-family: 'Sacramento', cursive;; /* Apply Great Vibes font */
+            font-family: 'Sacramento', cursive; /* Apply Sacramento font */
         }
         .nav-link {
             color: white;
@@ -64,6 +64,7 @@
             display: flex;
             flex: 1;
             margin: 0 10%;
+            margin: 0 40px;
         }
         .about-text, .about-image {
             flex: 1;
@@ -111,10 +112,11 @@
         section h2 {
             font-size: 2.5rem; /* Increase the font size */
             font-weight: 700; /* Make it bolder */
-            width: 100%; /* Increase width to 100% of the section */
-            text-align: center;
+            display: inline; /* Ensure the underline only applies to the text */
+            border-bottom: 1px solid #DDA0DD; /* Underline color */
+            padding-bottom: 2px; /* Space between text and underline */
+            margin-bottom: 2rem; /* Space under the heading */
         }
-
         #home h3 {
             font-size: 2rem; /* Adjust size as needed */
             font-weight: 600; /* Thicker text */
@@ -131,6 +133,67 @@
         .name-highlight {
             color: #DDA0DD; /* Same purple shade as navbar highlighting */
         }
+
+        /* Contact Me Section */
+        .contact-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+
+        .contact-links a {
+            display: inline-block;
+        }
+
+        .contact-links img {
+            width: 40px; /* Adjust the size of the icons */
+            height: auto;
+        }
+        .email-list {
+            list-style-type: none;
+            padding: 0;
+            text-align: center;
+        }
+
+        .email-list li {
+            margin: 0.5rem 0;
+        }
+
+        /* Style for email links */
+        .email-list a {
+            color: #DDA0DD; /* Set this to your desired color */
+            text-decoration: none; /* Optional: Remove underline */
+        }
+
+        .email-list a:hover {
+            color: #ffb6f0; /* Set this to your desired hover color */
+            text-decoration: underline; /* Optional: Add underline on hover */
+        }
+
+        /* Style for <h2> in the About Me section */
+        #about h2 {
+            border-bottom: 1px solid #DDA0DD; /* Decrease border thickness */
+            padding-bottom: 2px; /* Adjust space between text and border */
+        }
+        #education h2 {
+            border-bottom: 1px solid #DDA0DD; /* Decrease border thickness */
+            padding-bottom: 2px; /* Adjust space between text and border */
+        }
+        #experience h2 {
+            border-bottom: 1px solid #DDA0DD; /* Decrease border thickness */
+            padding-bottom: 2px; /* Adjust space between text and border */
+        }#projects h2 {
+            border-bottom: 1px solid #DDA0DD; /* Decrease border thickness */
+            padding-bottom: 2px; /* Adjust space between text and border */
+        }
+        #contact h2 {
+            border-bottom: 1px solid #DDA0DD; /* Underline color */
+            padding-bottom: 2px; /* Adjust space between text and border */
+        }
+
+
+        
     </style>
 </head>
 <body>
@@ -176,13 +239,11 @@
         </div>
         <div class="about-content">
             <div class="about-text">
-                <p>Hello, I'm John Doe, a passionate web developer with a focus on front-end technologies. I have several years of experience creating modern and responsive websites using HTML, CSS, and JavaScript.</p>
-                <p>I have a strong understanding of web design principles and enjoy bringing creative ideas to life through code. With a keen eye for detail and a passion for user experience, I strive to create intuitive and visually appealing websites.</p>
-                <p>In addition to web development, I also have experience with graphic design tools such as Photoshop and Illustrator, which allows me to create engaging visuals and designs.</p>
-                <p>Feel free to explore my portfolio and get in touch with me for any project or collaboration opportunities. I'm always excited to work on new and challenging projects.</p>
+                <p>I'm Asmin, a rising senior in computer science with a keen interest in AI, machine learning, and natural language processing. </p>
+                <p>I combine my programming skills with my love for art, travel, and food to bring a creative and multifaceted perspective to my work. My journey as a programmer is complemented by my passion for exploring new horizons and savoring diverse culinary experiences. I approach every project with a blend of technical expertise and creative flair, driven by curiosity and a desire to innovate.</p>
             </div>
             <div class="about-image">
-                <img src="path/to/your/image.jpg" alt="About Me Image"> <!-- Replace with your image path -->
+                <img src="aboutme_pic.JPG" alt="About Me Image"> 
             </div>
         </div>
     </section>
@@ -201,12 +262,14 @@
         <h2>Education</h2>
         <div class="education-container">
             <div class="education-box">
-                <h3>Degree 1</h3>
-                <p>Details about Degree 1</p>
+                <p>BACHELORS OF SCIENCE IN COMPUTER SCIENCE (Hons.)</p>
+                <p>Aug 2021 - Present</p>
+                <p>THE UNIVERSITY OF TEXAS, ARLINGTON, TX</p>
             </div>
             <div class="education-box">
-                <h3>Degree 2</h3>
-                <p>Details about Degree 2</p>
+                <p>HIGH SCHOOL DIPLOMA</p>
+                <p>CLASS OF 2021</p>
+                <p>ADITYA IIT TALENT SCHOOL, KAKINADA, INDIA</p>
             </div>
         </div>
     </section>
@@ -224,8 +287,23 @@
     </section>
 
     <section id="contact">
-        <h2>Contact</h2>
-        <p>Placeholder text for the contact section.</p>
+        <h2>Contact Me</h2>
+        <p>If you would like to get in touch with me, you can connect with me through the following platforms:</p>
+        <div class="contact-links">
+            <a href="https://github.com/yourusername" target="_blank" aria-label="GitHub">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/github.png" alt="GitHub icon" />
+            </a>
+            <a href="https://www.linkedin.com/in/yourusername" target="_blank" aria-label="LinkedIn">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/linkedin.png" alt="LinkedIn icon" />
+            </a>
+            <a href="https://discord.com/users/youruserid" target="_blank" aria-label="Discord">
+                <img src="https://img.icons8.com/ios-filled/50/ffffff/discord.png" alt="Discord icon" />
+            </a>
+        </div>
+        <p>You can also reach me via email:</p>
+        <ul class="email-list">
+            <li>Email: <a href="mailto:asmin.pothula@gmail.com">asmin.pothula@gmail.com</a></li>
+        </ul>
     </section>
 
     <script>
